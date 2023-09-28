@@ -6,10 +6,10 @@ def jfrog():
     path = '/home/ubuntu/JAVA_APP_3.0/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar'
 
     username = 'admin'
-    passkey = 'Datta123@'
+    password = 'Datta123@'
 
     with open(path , 'rb') as file:
-        reponse = requests.put(artifactory_url , auth=(username , passkey), data = file)
+        reponse = requests.put(artifactory_url , auth=(username , password), data = file)
     
     if reponse.status_code == 201:
         print("\n PUT request successful")
