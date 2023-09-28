@@ -6,7 +6,7 @@ def jfrog():
     path = '/home/ubuntu/JAVA_APP_3.0/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar'
 
     username = 'admin'
-    passkey = ''
+    passkey = 'Datta123@'
 
     with open(path , 'rb') as file:
         reponse = requests.put(artifactory_url , auth=(username , passkey), data = file)
