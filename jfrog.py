@@ -1,7 +1,7 @@
 import requests
 
 def jfrog():
-    artifactory_url = 'http://54.177.86.80:8082/artifactory/example-repo-local/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar'
+    artifactory_url = 'http://54.215.251.107:8082/artifactory/example-repo-local/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar'
 
     file_path = '/home/ubuntu/java-3.0/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar'
 
