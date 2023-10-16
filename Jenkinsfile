@@ -72,15 +72,15 @@ pipeline{
                }
             }
         }
-        stage('Push JAR file to Jfrog repo : python script'){
-         when { expression {  params.action == 'create' } }
-            steps{
-               script{
+        // stage('Push JAR file to Jfrog repo : python script'){
+        //  when { expression {  params.action == 'create' } }
+        //     steps{
+        //        script{
                    
-                   jarpush()
-               }
-            }
-        }
+        //            jarpush()
+        //        }
+        //     }
+        // }
         stage('Jar push JFROG : jfrog'){
         when { expression { params.action == 'create' } }
         steps{
