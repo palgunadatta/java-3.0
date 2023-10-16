@@ -88,11 +88,11 @@ pipeline{
                 def artifactoryUrl = 'http://54.208.122.242:8082/artifactory'
                 def artifactoryRepo = 'example-repo-local'
                 def jarFileName = 'kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar'
-                def targetPath = "${artifactoryRepo}/home/"
+                def targetPath = "${artifactoryRepo}/datta/"
                 sh """
                 cd /var/lib/jenkins/workspace/assmnt2/target/
                 chmod +x ${jarFileName}
-                curl -X PUT -u admin:palgunadatta -T ${jarFileName} ${artifactoryUrl}/${targetPath}
+                curl -X PUT -u admin:admin -T ${jarFileName} ${artifactoryUrl}/${targetPath}
                 """
                 }
             }
