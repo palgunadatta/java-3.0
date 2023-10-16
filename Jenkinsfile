@@ -81,6 +81,22 @@ pipeline{
                }
             }
         }
+        stage('Jar push JFROG : jfrog'){
+        when { expression { params.action == 'create' } }
+        steps{
+            script{
+                def artifactoryUrl = 'http://54.208.122.242:8082/artifactory'
+                def artifactoryRepo = 'example-repo-local'
+                def jarFileName = 'kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar'
+                def targetPath = "${artifactoryRepo}/home/"
+                sh """
+                cd /var/lib/jenkins/workspace/jfrog-demo/target/
+                chmod +x ${jarFileName}
+                curl -X PUT -u admin:palgunadatta -T ${jarFileName} ${artifactoryUrl}/${targetPath}
+                """
+                }
+            }
+        }
         stage('Docker Image Build'){
          when { expression {  params.action == 'create' } }
             steps{
